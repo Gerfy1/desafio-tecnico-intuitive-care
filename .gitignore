@@ -1,2 +1,7 @@
-"venv/"  "__pycache__/"  "data/"  ".env" 
-"frontend/node_modules/"
+venv/
+__pycache__/
+data/
+.env
+frontend/node_modules/
+*.pyc
+.DS_Store
