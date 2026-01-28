@@ -23,25 +23,25 @@ Hora de criar o ambiente virtual, instalar as dependências e executar o pipelin
 
 # Configuração do Ambiente
 python -m venv venv
-# Windows:
+## Windows:
 .\venv\Scripts\activate
-# Linux ou Mac:
+## Linux ou Mac:
 source venv/bin/activate
 
-# Instalação dos pacotes
+## Instalação dos pacotes
 pip install -r requirements.txt
 
-# --- Execução do Pipeline ETL (faça isso de forma sequencial) ---
-# 1- Esse script baixa os dados da ANS (Crawler resiliente a mudanças de diretório)
+Execução do Pipeline ETL (faça isso de forma sequencial)
+### 1- Esse script baixa os dados da ANS (Crawler resiliente a mudanças de diretório)
 python etl/1_downloader.py
 
-# 2- Esse script processa, limpa e enriquece/alimenta os CSVs (Tratamento de Encoding e Cadop)
+### 2- Esse script processa, limpa e enriquece/alimenta os CSVs (Tratamento de Encoding e Cadop)
 python etl/2_processor.py
 
-# 3- Esse script agrega dados e remove duplicidade contábil (Regra de Negócio)
+### 3- Esse script agrega dados e remove duplicidade contábil (Regra de Negócio)
 python etl/3_aggregator.py
 
-# 4- E esse script carrega os dados no Banco SQL (Bulk Insert de Alta Performance)
+### 4- E esse script carrega os dados no Banco SQL (Bulk Insert de Alta Performance)
 python etl/4_loader.py
 
 ## Mas e como inicia a API?
